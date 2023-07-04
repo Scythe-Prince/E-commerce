@@ -67,7 +67,7 @@ transition: $main_transition;
 }
 @media (min-width: 768px) and (max-width: 840px) {
   .nav-bar .search-box input {
-    width: 300px;
+    width: 200px;
   }
 }
 @media (min-width: 300px) and (max-width: 767px) {
@@ -88,6 +88,10 @@ transition: $main_transition;
 
     font-weight: 500;
     margin-right: 5px;
+  }
+  .search-box{
+    display: none;
+
   }
 }
 @media (width: 375px) {

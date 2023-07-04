@@ -3,12 +3,24 @@
 @use "./animations";
 @use "./fonts";
 @use "./nav-bar";
+@use "./sec-nav";
+// @use "./sec-nav\(electro\)";
 // global settings
 *{
     box-sizing: border-box;
     margin: 0px;
+    ul{
+        text-decoration: none;
+        
+    }
 }
 
+.active{
+    display: block;
+}
+.hidden{
+    display: none;
+}
 a{
     text-decoration: none;
 color: black;

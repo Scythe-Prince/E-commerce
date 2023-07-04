@@ -1,0 +1,126 @@
+@use "./color_ref" as *;
+.sec-nav {
+  background: rgb(252, 251, 244);
+  border-bottom: 1px solid rgb(226, 229, 241);
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: auto;
+  #special-link {
+    a {
+      text-wrap: nowrap;
+      color: #2196f3;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+    i {
+      color: #2196f3;
+    }
+  }
+  #sell-item {
+    a {
+      color: #f44336;
+      font-weight: bold;
+    }
+    i {
+      color: #f44336;
+    }
+  }
+  .link-con {
+    padding: 15px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: $main_transition;
+    cursor: pointer;
+    position: relative;
+    a {
+      margin-left: 5px;
+    }
+    &:hover {
+      background-color: rgb(255, 255, 255);
+      box-shadow: rgba(0, 0, 0, 0.18) 0px 5px 4px 0px;
+    }
+  }
+}
+.cat-list-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: inherit;
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  .cat-list {
+    background: rgb(252, 251, 244);
+
+    span {
+      padding: 10px 20px;
+      margin: 5px auto;
+      display: block;
+      font-size: 14px;
+      text-wrap: nowrap;
+      border-bottom: 1px solid #eee;
+    }
+    span:hover {
+      color: $hover_color;
+    }
+  }
+  .cat-list-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .cat-list2 {
+    background-color: white;
+  }
+  .cat-list-header {
+    h2 {
+      margin: 5px 10px;
+      padding: 10px 10px;
+      border-bottom: 1px solid #eee;
+      color: $sup_text3;
+      cursor: text;
+    }
+  }
+  .cat-list-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .cat-list-content-p1 {
+      h3 {
+        margin: 5px 10px;
+        padding: 10px 10px;
+        color: #404553;
+        text-wrap: nowrap;
+        cursor: text;
+      }
+      span {
+        border: none;
+        color: #777;
+        font-size: 13px;
+        font-weight: 400;
+      }
+      span:hover {
+        color: $hover_color;
+      }
+    }
+  }
+  .cat-list.cat-list2 {
+    transition: $main_transition;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 910px) {
+  .sec-nav {
+    display: flex;
+    overflow-x: scroll;
+    i {
+      display: none;
+    }
+  }
+}
+@media (min-width: 300px) and (max-width: 910px) {
+  // .sec-nav {
+  //   display: none;
+  // }
+}
