@@ -4,7 +4,6 @@ html {
 }
 
 .full-nav-bar {
-  position: fixed;
   width: 100%;
 }
 
@@ -132,6 +131,15 @@ html {
 .sec-nav #sell-item i {
   color: #f44336;
 }
+.sec-nav #sell-item:hover {
+  background-color: #f44336;
+}
+.sec-nav #sell-item:hover a {
+  color: white;
+}
+.sec-nav #sell-item:hover i {
+  color: white;
+}
 .sec-nav .link-con {
   width: 100%;
   padding: 15px 15px;
@@ -150,12 +158,12 @@ html {
 .sec-nav .link-con:hover a {
   color: white;
 }
-.sec-nav .link-con:hover:not(#special-link) {
+.sec-nav .link-con:hover:not(#special-link, #sell-item) {
   color: white;
   background-color: #ffc107;
 }
 
-#special-link:hover div#categories .cat-list {
+#special-link:hover div#categories > .cat-list {
   visibility: visible;
   opacity: 1;
 }
@@ -209,24 +217,29 @@ div#categories .cat-list {
   justify-content: space-between;
   align-items: flex-start;
 }
-.cat-list-container .cat-list-content .cat-list-content-p1 h3 {
+.cat-list-container .cat-list-content-p1 h3 {
   margin: 5px 10px;
   padding: 10px 10px;
   color: #404553;
   text-wrap: nowrap;
   cursor: text;
 }
-.cat-list-container .cat-list-content .cat-list-content-p1 span {
+.cat-list-container .cat-list-content-p1 span {
   border: none;
   color: #777;
   font-size: 13px;
   font-weight: 400;
 }
-.cat-list-container .cat-list-content .cat-list-content-p1 span:hover {
+.cat-list-container .cat-list-content-p1 span:hover {
   color: #2196f3;
 }
-.cat-list-container .cat-list.cat-list2 {
+
+.cat-list.cat-list2 {
   transition: 0.3s;
+  box-shadow: 7px 1px 16px 0px #ddd;
+  border-bottom: 2px solid rgb(226, 229, 241);
+  border-right: 2px solid rgb(226, 229, 241);
+  padding: 10px 25px;
 }
 
 @media (min-width: 300px) and (max-width: 1115px) {
@@ -236,6 +249,16 @@ div#categories .cat-list {
   }
   .sec-nav .link-con {
     text-align: left;
+  }
+}
+@media (min-width: 300px) and (max-width: 600px) {
+  .sec-nav .cat-list-container .cat-list-content {
+    flex-direction: column;
+  }
+  .sec-nav .cat-list.cat-list2 {
+    padding: 0px;
+    overflow-y: scroll;
+    height: 150vh;
   }
 }
 * {

@@ -7,7 +7,6 @@
   justify-content: space-evenly;
   align-items: center;
 
-
   #special-link {
     a {
       text-wrap: nowrap;
@@ -34,6 +33,15 @@
     i {
       color: #f44336;
     }
+    &:hover {
+      background-color: #f44336;
+    }
+    &:hover a {
+      color: white;
+    }
+    &:hover i {
+      color: white;
+    }
   }
   .link-con {
     width: 100%;
@@ -52,7 +60,7 @@
     &:hover a {
       color: white;
     }
-    &:hover:not(#special-link) {
+    &:hover:not(#special-link, #sell-item) {
       color: white;
       background-color: $sec_color;
       // background-color: rgb(255, 255, 255);
@@ -60,7 +68,8 @@
     }
   }
 }
-#special-link:hover div#categories .cat-list {
+
+#special-link:hover div#categories>.cat-list {
   visibility: visible;
   opacity: 1;
 }
@@ -77,6 +86,7 @@ div#categories .cat-list {
   position: absolute;
   top: calc(100% + 1px);
   left: 0;
+
   .cat-list {
     background: rgb(252, 251, 244);
 
@@ -113,29 +123,51 @@ div#categories .cat-list {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    .cat-list-content-p1 {
-      h3 {
-        margin: 5px 10px;
-        padding: 10px 10px;
-        color: #404553;
-        text-wrap: nowrap;
-        cursor: text;
-      }
-      span {
-        border: none;
-        color: #777;
-        font-size: 13px;
-        font-weight: 400;
-      }
-      span:hover {
-        color: $hover_color;
-      }
+    // flex-direction: column;
+  }
+  .cat-list-content-p1 {
+    h3 {
+      margin: 5px 10px;
+      padding: 10px 10px;
+      color: #404553;
+      text-wrap: nowrap;
+      cursor: text;
+    }
+    span {
+      border: none;
+      color: #777;
+      font-size: 13px;
+      font-weight: 400;
+    }
+    span:hover {
+      color: $hover_color;
     }
   }
-  .cat-list.cat-list2 {
-    transition: $main_transition;
-  }
 }
+.cat-list.cat-list2 {
+  transition: $main_transition;
+  box-shadow: 7px 1px 16px 0px #ddd;
+  border-bottom: 2px solid rgb(226, 229, 241);
+  border-right: 2px solid rgb(226, 229, 241);
+  padding: 10px 25px;
+}
+// #electro-menu,
+// #mobile-menu,
+// #grocery-menu,
+// #beauty-menu,
+// #fashion-menu,
+// #home-menu,
+// #Sports-menu,
+// #Baby-menu,
+// #Automotive-menu,
+// #Books-menu,
+// #Stationery-menu,
+// #Music-menu {
+//   display: none;
+// }
+// #link1:hover+#electro-menu{
+//   display: block;
+// }
 
 @media (min-width: 300px) and (max-width: 1115px) {
   .sec-nav {
@@ -146,7 +178,17 @@ div#categories .cat-list {
     }
   }
 }
-@media (min-width: 300px) and (max-width: 910px) {
+@media (min-width: 300px) and (max-width: 600px) {
   .sec-nav {
+    .cat-list-container {
+      .cat-list-content {
+        flex-direction: column;
+      }
+    }
+    .cat-list.cat-list2 {
+      padding: 0px;
+      overflow-y: scroll;
+      height: 150vh;
+    }
   }
 }
