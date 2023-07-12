@@ -106,7 +106,7 @@ html {
   border-bottom: 1px solid rgb(226, 229, 241);
   position: relative;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 .sec-nav #special-link a {
@@ -148,7 +148,6 @@ html {
   transition: 0.3s;
   cursor: pointer;
   text-wrap: nowrap;
-  position: relative;
   border-radius: 7px;
   text-align: center;
 }
@@ -158,9 +157,16 @@ html {
 .sec-nav .link-con:hover a {
   color: white;
 }
-.sec-nav .link-con:hover:not(#special-link, #sell-item) {
+.sec-nav .link-con:hover:not(#special-link, #sell-item, #electronics-menu) {
   color: white;
   background-color: #ffc107;
+}
+
+#electronics-menu:hover {
+  background-color: #ffc107;
+}
+#electronics-menu:hover i {
+  color: white;
 }
 
 #special-link:hover div#categories > .cat-list {
@@ -173,7 +179,18 @@ div#categories .cat-list {
   opacity: 0;
 }
 
+#electronics-menu:hover div#electronics > .cat-list {
+  visibility: visible;
+  opacity: 1;
+}
+
+div#electronics .cat-list {
+  transition: 0.3s;
+  opacity: 0;
+}
+
 .cat-list-container {
+  text-align: left;
   z-index: 5;
   visibility: hidden;
   display: flex;
@@ -241,6 +258,32 @@ div#categories .cat-list {
   border-right: 2px solid rgb(226, 229, 241);
   padding: 10px 25px;
 }
+.cat-list.cat-list2 .cat-list-content-p1 .brands-ads {
+  display: flex;
+  align-items: flex-start;
+}
+.cat-list.cat-list2 .cat-list-content-p1 .brands .brand-container {
+  display: flex;
+  flex-direction: row;
+}
+.cat-list.cat-list2 .cat-list-content-p1 .brands .brand-container img {
+  max-width: 150px;
+  padding: 10px 20px;
+  border: 1px solid #eee;
+  margin: 5px;
+}
+.cat-list.cat-list2 .ad-container {
+  display: flex;
+  align-items: flex-start;
+}
+.cat-list.cat-list2 #ad-1 {
+  padding: 10px;
+  width: 400px;
+}
+.cat-list.cat-list2 #ad-2 {
+  padding: 10px;
+  height: 300px;
+}
 
 @media (min-width: 300px) and (max-width: 1115px) {
   .sec-nav {
@@ -250,8 +293,14 @@ div#categories .cat-list {
   .sec-nav .link-con {
     text-align: left;
   }
+  .sec-nav .link-con .cat-list.cat-list2 .cat-list-content .ad-container {
+    display: none;
+  }
 }
 @media (min-width: 300px) and (max-width: 600px) {
+  .sec-nav .link-con {
+    position: relative;
+  }
   .sec-nav .cat-list-container .cat-list-content {
     flex-direction: column;
   }
@@ -259,6 +308,42 @@ div#categories .cat-list {
     padding: 0px;
     overflow-y: scroll;
     height: 150vh;
+  }
+  .sec-nav #categories {
+    min-height: 150vh;
+  }
+  .sec-nav #electronics {
+    min-height: 150vh;
+  }
+  .sec-nav .cat-list.cat-list2 .cat-list-content-p1 .brand-container {
+    flex-direction: column;
+  }
+}
+@media (min-width: 300px) and (max-width: 400px) {
+  #electronics-menu .cat-list-header h2 {
+    font-size: 17px;
+  }
+  #electronics-menu .cat-list-content-p1 h3 {
+    font-size: 15px;
+  }
+  #electronics-menu .cat-list-content-p1 .brand-container {
+    flex-direction: column;
+  }
+  #electronics-menu .cat-list-content-p1 .brand-container img {
+    max-width: 130px;
+    padding: 10px 20px;
+    margin: 10px 3px;
+  }
+}
+@media (min-width: 768px) and (max-width: 900px) {
+  .sec-nav .link-con {
+    position: relative;
+  }
+  .sec-nav #categories {
+    min-height: 100vh;
+  }
+  .sec-nav #electronics {
+    min-height: 100vh;
   }
 }
 * {
