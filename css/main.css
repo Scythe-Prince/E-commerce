@@ -157,7 +157,10 @@ html {
 .sec-nav .link-con:hover a {
   color: white;
 }
-.sec-nav .link-con:hover:not(#special-link, #sell-item, #electronics-menu) {
+.sec-nav .link-con:hover:not(#special-link,
+#sell-item,
+#electronics-menu,
+#mobile-menu, #men-menu, #women-menu) {
   color: white;
   background-color: #ffc107;
 }
@@ -166,6 +169,27 @@ html {
   background-color: #ffc107;
 }
 #electronics-menu:hover i {
+  color: white;
+}
+
+#mobile-menu:hover {
+  background-color: #ffc107;
+}
+#mobile-menu:hover i {
+  color: white;
+}
+
+#men-menu:hover {
+  background-color: #ffc107;
+}
+#men-menu:hover i {
+  color: white;
+}
+
+#women-menu:hover {
+  background-color: #ffc107;
+}
+#women-menu:hover i {
   color: white;
 }
 
@@ -185,6 +209,36 @@ div#categories .cat-list {
 }
 
 div#electronics .cat-list {
+  transition: 0.3s;
+  opacity: 0;
+}
+
+#mobile-menu:hover div#mobiles > .cat-list {
+  visibility: visible;
+  opacity: 1;
+}
+
+div#mobiles .cat-list {
+  transition: 0.3s;
+  opacity: 0;
+}
+
+#men-menu:hover div#men > .cat-list {
+  visibility: visible;
+  opacity: 1;
+}
+
+div#men .cat-list {
+  transition: 0.3s;
+  opacity: 0;
+}
+
+#women-menu:hover div#women > .cat-list {
+  visibility: visible;
+  opacity: 1;
+}
+
+div#women .cat-list {
   transition: 0.3s;
   opacity: 0;
 }
@@ -315,6 +369,12 @@ div#electronics .cat-list {
   .sec-nav #electronics {
     min-height: 150vh;
   }
+  .sec-nav #mobiles {
+    min-height: 150vh;
+  }
+  .sec-nav #men {
+    min-height: 150vh;
+  }
   .sec-nav .cat-list.cat-list2 .cat-list-content-p1 .brand-container {
     flex-direction: column;
   }
@@ -325,11 +385,57 @@ div#electronics .cat-list {
   }
   #electronics-menu .cat-list-content-p1 h3 {
     font-size: 15px;
+    text-align: center;
   }
   #electronics-menu .cat-list-content-p1 .brand-container {
     flex-direction: column;
   }
   #electronics-menu .cat-list-content-p1 .brand-container img {
+    max-width: 130px;
+    padding: 10px 20px;
+    margin: 10px 3px;
+  }
+  #mobile-menu .cat-list-header h2 {
+    font-size: 17px;
+  }
+  #mobile-menu .cat-list-content-p1 h3 {
+    font-size: 15px;
+    text-align: center;
+  }
+  #mobile-menu .cat-list-content-p1 .brand-container {
+    flex-direction: column;
+  }
+  #mobile-menu .cat-list-content-p1 .brand-container img {
+    max-width: 130px;
+    padding: 10px 20px;
+    margin: 10px 3px;
+  }
+  #men-menu .cat-list-header h2 {
+    font-size: 17px;
+  }
+  #men-menu .cat-list-content-p1 h3 {
+    font-size: 15px;
+    text-align: center;
+  }
+  #men-menu .cat-list-content-p1 .brand-container {
+    flex-direction: column;
+  }
+  #men-menu .cat-list-content-p1 .brand-container img {
+    max-width: 130px;
+    padding: 10px 20px;
+    margin: 10px 3px;
+  }
+  #women-menu .cat-list-header h2 {
+    font-size: 17px;
+  }
+  #women-menu .cat-list-content-p1 h3 {
+    font-size: 15px;
+    text-align: center;
+  }
+  #women-menu .cat-list-content-p1 .brand-container {
+    flex-direction: column;
+  }
+  #women-menu .cat-list-content-p1 .brand-container img {
     max-width: 130px;
     padding: 10px 20px;
     margin: 10px 3px;
