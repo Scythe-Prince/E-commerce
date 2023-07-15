@@ -64,7 +64,9 @@
         #special-link,
         #sell-item,
         #electronics-menu,
-        #mobile-menu, #men-menu,#women-menu
+        #mobile-menu,
+        #men-menu,
+        #women-menu,#home-menu,#health-menu
       ) {
       color: white;
       background-color: $sec_color;
@@ -98,6 +100,22 @@
   }
 }
 #women-menu {
+  &:hover {
+    background-color: $sec_color;
+  }
+  &:hover i {
+    color: white;
+  }
+}
+#home-menu {
+  &:hover {
+    background-color: $sec_color;
+  }
+  &:hover i {
+    color: white;
+  }
+}
+#health-menu {
   &:hover {
     background-color: $sec_color;
   }
@@ -142,6 +160,22 @@ div#men .cat-list {
   opacity: 1;
 }
 div#women .cat-list {
+  transition: $main_transition;
+  opacity: 0;
+}
+#home-menu:hover div#home > .cat-list {
+  visibility: visible;
+  opacity: 1;
+}
+div#home .cat-list {
+  transition: $main_transition;
+  opacity: 0;
+}
+#health-menu:hover div#health > .cat-list {
+  visibility: visible;
+  opacity: 1;
+}
+div#health .cat-list {
   transition: $main_transition;
   opacity: 0;
 }
@@ -241,11 +275,7 @@ div#women .cat-list {
   }
   #ad-1 {
     padding: 10px;
-    width: 400px;
-  }
-  #ad-2 {
-    padding: 10px;
-    height: 300px;
+    max-width: 100%;
   }
 }
 
@@ -286,6 +316,18 @@ div#women .cat-list {
       min-height: 150vh;
     }
     #men {
+      min-height: 150vh;
+    }
+    #women {
+      min-height: 150vh;
+    }
+    #home {
+      min-height: 150vh;
+    }
+    .cat-list.cat-list2 .cat-list-content-p1 .brand-container {
+      flex-direction: column;
+    }
+    #health {
       min-height: 150vh;
     }
     .cat-list.cat-list2 .cat-list-content-p1 .brand-container {
@@ -347,6 +389,36 @@ div#women .cat-list {
     text-align: center;
   }
   #women-menu .cat-list-content-p1 .brand-container {
+    flex-direction: column;
+    & img {
+      max-width: 130px;
+      padding: 10px 20px;
+      margin: 10px 3px;
+    }
+  }
+  #home-menu .cat-list-header h2 {
+    font-size: 17px;
+  }
+  #home-menu .cat-list-content-p1 h3 {
+    font-size: 15px;
+    text-align: center;
+  }
+  #home-menu .cat-list-content-p1 .brand-container {
+    flex-direction: column;
+    & img {
+      max-width: 130px;
+      padding: 10px 20px;
+      margin: 10px 3px;
+    }
+  }
+  #health-menu .cat-list-header h2 {
+    font-size: 17px;
+  }
+  #health-menu .cat-list-content-p1 h3 {
+    font-size: 15px;
+    text-align: center;
+  }
+  #health-menu .cat-list-content-p1 .brand-container {
     flex-direction: column;
     & img {
       max-width: 130px;
