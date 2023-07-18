@@ -66,7 +66,11 @@
         #electronics-menu,
         #mobile-menu,
         #men-menu,
-        #women-menu,#home-menu,#health-menu
+        #women-menu,
+        #home-menu,
+        #health-menu,
+        #baby-menu,
+        #supermarket-menu
       ) {
       color: white;
       background-color: $sec_color;
@@ -116,6 +120,22 @@
   }
 }
 #health-menu {
+  &:hover {
+    background-color: $sec_color;
+  }
+  &:hover i {
+    color: white;
+  }
+}
+#baby-menu {
+  &:hover {
+    background-color: $sec_color;
+  }
+  &:hover i {
+    color: white;
+  }
+}
+#supermarket-menu {
   &:hover {
     background-color: $sec_color;
   }
@@ -176,6 +196,22 @@ div#home .cat-list {
   opacity: 1;
 }
 div#health .cat-list {
+  transition: $main_transition;
+  opacity: 0;
+}
+#baby-menu:hover div#baby > .cat-list {
+  visibility: visible;
+  opacity: 1;
+}
+div#baby .cat-list {
+  transition: $main_transition;
+  opacity: 0;
+}
+#supermarket-menu:hover div#supermarket > .cat-list {
+  visibility: visible;
+  opacity: 1;
+}
+div#supermarket .cat-list {
   transition: $main_transition;
   opacity: 0;
 }
@@ -281,6 +317,9 @@ div#health .cat-list {
 
 @media (min-width: 300px) and (max-width: 1115px) {
   .sec-nav {
+    .link-con {
+      position: relative;
+    }
     flex-direction: column;
     align-items: flex-start;
     & .link-con {
@@ -289,13 +328,34 @@ div#health .cat-list {
     .link-con .cat-list.cat-list2 .cat-list-content .ad-container {
       display: none;
     }
+    #categories {
+      min-height: 100vh;
+    }
+    #electronics {
+      min-height: 100vh;
+    }
+    #mobiles {
+      min-height: 100vh;
+    }
+    #men {
+      min-height: 100vh;
+    }
+    #women {
+      min-height: 100vh;
+    }
+    #home {
+      min-height: 100vh;
+    }
+    #health {
+      min-height: 100vh;
+    }
+    #supermarket {
+      min-height: 100vh;
+    }
   }
 }
 @media (min-width: 300px) and (max-width: 600px) {
   .sec-nav {
-    .link-con {
-      position: relative;
-    }
     .cat-list-container {
       .cat-list-content {
         flex-direction: column;
@@ -306,29 +366,9 @@ div#health .cat-list {
       overflow-y: scroll;
       height: 150vh;
     }
-    #categories {
-      min-height: 150vh;
-    }
-    #electronics {
-      min-height: 150vh;
-    }
-    #mobiles {
-      min-height: 150vh;
-    }
-    #men {
-      min-height: 150vh;
-    }
-    #women {
-      min-height: 150vh;
-    }
-    #home {
-      min-height: 150vh;
-    }
+
     .cat-list.cat-list2 .cat-list-content-p1 .brand-container {
       flex-direction: column;
-    }
-    #health {
-      min-height: 150vh;
     }
     .cat-list.cat-list2 .cat-list-content-p1 .brand-container {
       flex-direction: column;
@@ -419,6 +459,36 @@ div#health .cat-list {
     text-align: center;
   }
   #health-menu .cat-list-content-p1 .brand-container {
+    flex-direction: column;
+    & img {
+      max-width: 130px;
+      padding: 10px 20px;
+      margin: 10px 3px;
+    }
+  }
+  #baby-menu .cat-list-header h2 {
+    font-size: 17px;
+  }
+  #baby-menu .cat-list-content-p1 h3 {
+    font-size: 15px;
+    text-align: center;
+  }
+  #baby-menu .cat-list-content-p1 .brand-container {
+    flex-direction: column;
+    & img {
+      max-width: 130px;
+      padding: 10px 20px;
+      margin: 10px 3px;
+    }
+  }
+  #supermarket-menu .cat-list-header h2 {
+    font-size: 17px;
+  }
+  #supermarket-menu .cat-list-content-p1 h3 {
+    font-size: 15px;
+    text-align: center;
+  }
+  #supermarket-menu .cat-list-content-p1 .brand-container {
     flex-direction: column;
     & img {
       max-width: 130px;

@@ -1,0 +1,15 @@
+.image-slider{
+    position: relative;
+    width: 100vh;
+    .image-container{
+        & img{
+
+        }
+    }
+    .arrow-left,.arrow-right{
+        position: absolute;
+    }
+    .slider-bar{
+
+    }
+}

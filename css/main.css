@@ -60,7 +60,7 @@ html {
   margin-left: 5px;
 }
 .nav-bar .nav-links a:hover {
-  color: #9e9e9e;
+  color: white;
 }
 
 @media (min-width: 768px) and (max-width: 840px) {
@@ -162,7 +162,11 @@ html {
 #electronics-menu,
 #mobile-menu,
 #men-menu,
-#women-menu, #home-menu, #health-menu) {
+#women-menu,
+#home-menu,
+#health-menu,
+#baby-menu,
+#supermarket-menu) {
   color: white;
   background-color: #ffc107;
 }
@@ -206,6 +210,20 @@ html {
   background-color: #ffc107;
 }
 #health-menu:hover i {
+  color: white;
+}
+
+#baby-menu:hover {
+  background-color: #ffc107;
+}
+#baby-menu:hover i {
+  color: white;
+}
+
+#supermarket-menu:hover {
+  background-color: #ffc107;
+}
+#supermarket-menu:hover i {
   color: white;
 }
 
@@ -275,6 +293,26 @@ div#home .cat-list {
 }
 
 div#health .cat-list {
+  transition: 0.3s;
+  opacity: 0;
+}
+
+#baby-menu:hover div#baby > .cat-list {
+  visibility: visible;
+  opacity: 1;
+}
+
+div#baby .cat-list {
+  transition: 0.3s;
+  opacity: 0;
+}
+
+#supermarket-menu:hover div#supermarket > .cat-list {
+  visibility: visible;
+  opacity: 1;
+}
+
+div#supermarket .cat-list {
   transition: 0.3s;
   opacity: 0;
 }
@@ -377,16 +415,40 @@ div#health .cat-list {
     align-items: flex-start;
   }
   .sec-nav .link-con {
+    position: relative;
+  }
+  .sec-nav .link-con {
     text-align: left;
   }
   .sec-nav .link-con .cat-list.cat-list2 .cat-list-content .ad-container {
     display: none;
   }
+  .sec-nav #categories {
+    min-height: 100vh;
+  }
+  .sec-nav #electronics {
+    min-height: 100vh;
+  }
+  .sec-nav #mobiles {
+    min-height: 100vh;
+  }
+  .sec-nav #men {
+    min-height: 100vh;
+  }
+  .sec-nav #women {
+    min-height: 100vh;
+  }
+  .sec-nav #home {
+    min-height: 100vh;
+  }
+  .sec-nav #health {
+    min-height: 100vh;
+  }
+  .sec-nav #supermarket {
+    min-height: 100vh;
+  }
 }
 @media (min-width: 300px) and (max-width: 600px) {
-  .sec-nav .link-con {
-    position: relative;
-  }
   .sec-nav .cat-list-container .cat-list-content {
     flex-direction: column;
   }
@@ -395,29 +457,8 @@ div#health .cat-list {
     overflow-y: scroll;
     height: 150vh;
   }
-  .sec-nav #categories {
-    min-height: 150vh;
-  }
-  .sec-nav #electronics {
-    min-height: 150vh;
-  }
-  .sec-nav #mobiles {
-    min-height: 150vh;
-  }
-  .sec-nav #men {
-    min-height: 150vh;
-  }
-  .sec-nav #women {
-    min-height: 150vh;
-  }
-  .sec-nav #home {
-    min-height: 150vh;
-  }
   .sec-nav .cat-list.cat-list2 .cat-list-content-p1 .brand-container {
     flex-direction: column;
-  }
-  .sec-nav #health {
-    min-height: 150vh;
   }
   .sec-nav .cat-list.cat-list2 .cat-list-content-p1 .brand-container {
     flex-direction: column;
@@ -514,6 +555,36 @@ div#health .cat-list {
     padding: 10px 20px;
     margin: 10px 3px;
   }
+  #baby-menu .cat-list-header h2 {
+    font-size: 17px;
+  }
+  #baby-menu .cat-list-content-p1 h3 {
+    font-size: 15px;
+    text-align: center;
+  }
+  #baby-menu .cat-list-content-p1 .brand-container {
+    flex-direction: column;
+  }
+  #baby-menu .cat-list-content-p1 .brand-container img {
+    max-width: 130px;
+    padding: 10px 20px;
+    margin: 10px 3px;
+  }
+  #supermarket-menu .cat-list-header h2 {
+    font-size: 17px;
+  }
+  #supermarket-menu .cat-list-content-p1 h3 {
+    font-size: 15px;
+    text-align: center;
+  }
+  #supermarket-menu .cat-list-content-p1 .brand-container {
+    flex-direction: column;
+  }
+  #supermarket-menu .cat-list-content-p1 .brand-container img {
+    max-width: 130px;
+    padding: 10px 20px;
+    margin: 10px 3px;
+  }
 }
 @media (min-width: 768px) and (max-width: 900px) {
   .sec-nav .link-con {
@@ -525,6 +596,13 @@ div#health .cat-list {
   .sec-nav #electronics {
     min-height: 100vh;
   }
+}
+.image-slider {
+  position: relative;
+  width: 100vh;
+}
+.image-slider .arrow-left, .image-slider .arrow-right {
+  position: absolute;
 }
 * {
   box-sizing: border-box;
