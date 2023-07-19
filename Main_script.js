@@ -53,7 +53,7 @@ const link12 = document.querySelector("#link12");
 link1.addEventListener("click", function () {
     for (let i = 0; i < arr_menu.length; i++) {
         if (arr_menu[i].classList.contains("hidden") === true) {
-            
+
         } else if (arr_menu[i].classList.contains("hidden") === false)
             arr_menu[i].classList.add("hidden");
     }
@@ -169,15 +169,32 @@ show_menu.addEventListener("click", function () {
     sec_nav_bar.classList.toggle("hidden");
 });
 
-// category.addEventListener("click",function(){
-//     category_menu.classList.toggle("active");
-// category_menu.classList.toggle("hidden");
-// })
 
-// const electro_button =document.getElementById("link1");
-// const electro_menu = document.getElementById("electro-menu");
-// electro_button.onclick =function(e) {
-//     electro_menu.classList.toggle("active");
-//     electro_menu.classList.toggle("hidden");
+// start image-slider
+let slider_images = Array.from(document.querySelectorAll(".image-slider .image-slider-container img"));
 
-// }
+let slider = document.getElementsByClassName("slider-bar");
+
+let current_slide = 1;
+let slide_number = document.getElementsByClassName("image-slider-container");
+let slidercount = slider_images.length;
+let next_arrow = document.querySelector(".arrow-right");
+let prev_arrow = document.querySelector(".arrow-left");
+next_arrow.onclick = next_slide;
+prev_arrow.onclick = prev_slide;
+function next_slide() {
+    console.log("Next");
+}
+function prev_slide() {
+    console.log("Previous");
+}
+let paginationElement = document.createElement("div");
+paginationElement.setAttribute("id", "pagination-container");
+paginationElement.classList.add("slider-bar");
+for (let i = 1; i <= slidercount; i++) {
+    let paginationitem = document.createElement('span');
+    paginationitem.setAttribute("data-index", i);
+    paginationElement.appendChild(paginationitem);
+}
+document.querySelector(".image-slider-container").appendChild(paginationElement);
+// end image-slider

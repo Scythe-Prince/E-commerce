@@ -599,11 +599,68 @@ div#supermarket .cat-list {
 }
 .image-slider {
   position: relative;
-  width: 100vh;
 }
-.image-slider .arrow-left, .image-slider .arrow-right {
+.image-slider .img-active {
+  display: block !important;
+}
+.image-slider .image-slider-container {
+  max-width: 100%;
+}
+.image-slider .image-slider-container img {
+  width: -webkit-fill-available;
+  display: none;
+}
+.image-slider .image-slider-container .image-slider-active {
+  background-color: white;
+}
+.image-slider .image-slider-container .slider-bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
   position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0px auto;
 }
+.image-slider .image-slider-container .slider-bar span {
+  display: block;
+  padding: 5px;
+  border: solid white 1px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.image-slider .image-slider-container .slider-bar span:hover {
+  background-color: white;
+}
+.image-slider .arrow-left,
+.image-slider .arrow-right {
+  position: absolute;
+  top: 50%;
+  font-size: 20px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 20px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: 0.5s;
+}
+.image-slider .arrow-left:hover,
+.image-slider .arrow-left .arrow-right:hover,
+.image-slider .arrow-right:hover,
+.image-slider .arrow-right .arrow-right:hover {
+  background-color: white;
+}
+.image-slider .arrow-left {
+  left: 30px;
+}
+.image-slider .arrow-right {
+  right: 30px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0px;
