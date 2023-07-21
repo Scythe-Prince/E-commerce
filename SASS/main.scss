@@ -7,52 +7,49 @@
 @use "./image_slider";
 // @use "./sec-nav\(electro\)";
 // global settings
-*{
-    box-sizing: border-box;
-    margin: 0px;
-    ul{
-        text-decoration: none;
-        
-    }
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  ul {
+    text-decoration: none;
+    list-style: none;
+  }
 }
 
-.active{
-    display: block;
+.active {
+  display: block;
 }
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
-a{
-    text-decoration: none;
-color: black;
+a {
+  text-decoration: none;
+  color: black;
 }
 /* mediaquery */
 @media (min-width: 768px) {
-    .container {
-        width: 750px;
-    }
-
+  .container {
+    width: 750px;
+  }
 }
 
 /* Medium */
 @media (min-width: 992px) {
-    .container {
-        width: 970px;
-    }
+  .container {
+    width: 970px;
+  }
 }
 
 /* Large */
 @media (min-width: 1200px) {
-    .container {
-        width: 1170px;
-    }
+  .container {
+    width: 1170px;
+  }
 }
 
-
-
 .container {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }

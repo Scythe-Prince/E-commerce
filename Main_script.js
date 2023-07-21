@@ -171,9 +171,7 @@ show_menu.addEventListener("click", function () {
 
 
 // start image-slider
-let slider_images = Array.from(document.querySelectorAll(".image-slider .image-slider-container img"));
-
-let slider = document.getElementsByClassName("slider-bar");
+let slider_images = Array.from(document.querySelectorAll(".image-slider-container img"));
 
 let current_slide = 1;
 let slide_number = document.getElementsByClassName("image-slider-container");
@@ -182,19 +180,63 @@ let next_arrow = document.querySelector(".arrow-right");
 let prev_arrow = document.querySelector(".arrow-left");
 next_arrow.onclick = next_slide;
 prev_arrow.onclick = prev_slide;
-function next_slide() {
-    console.log("Next");
-}
-function prev_slide() {
-    console.log("Previous");
-}
-let paginationElement = document.createElement("div");
-paginationElement.setAttribute("id", "pagination-container");
+
+let paginationElement = document.createElement("ul");
+paginationElement.setAttribute("id", "pagination-ul");
 paginationElement.classList.add("slider-bar");
 for (let i = 1; i <= slidercount; i++) {
-    let paginationitem = document.createElement('span');
+    let paginationitem = document.createElement('li');
     paginationitem.setAttribute("data-index", i);
     paginationElement.appendChild(paginationitem);
 }
 document.querySelector(".image-slider-container").appendChild(paginationElement);
+
+// get pagination bullets 
+var paginationUL = document.getElementById("pagination-ul");
+let slider_bullets = Array.from(document.querySelectorAll(".slider-bar li"));
+for (var i = 0; i < slider_bullets.length; i++) {
+    slider_bullets[i].onclick = function () {
+        current_slide = parseInt(this.getAttribute('data-index'));
+        checker();
+    }
+}
+checker();
+function next_slide() {
+    current_slide++;
+    if (current_slide == 6) {
+        current_slide = 1;
+    }
+    checker();
+}
+setInterval(function next_slide() {
+    current_slide++;
+    if (current_slide == 6) {
+        current_slide = 1;
+    }
+    checker();
+},2500);
+function prev_slide() {
+    current_slide--;
+    if (current_slide == 0) {
+        current_slide = 5;
+    }
+    checker();
+}
+// create checker function
+function checker() {
+    // set active class 
+    active_removal();
+    slider_images[current_slide - 1].classList.add("img-active");
+    paginationUL.children[current_slide - 1].classList.add("image-slider-active");
+}
+function active_removal() {
+    // loop through images
+    slider_images.forEach(function (img) {
+        img.classList.remove("img-active");
+    });
+    // loop through bullets
+    slider_bullets.forEach(function (bullet) {
+        bullet.classList.remove("image-slider-active");
+    });
+}
 // end image-slider
