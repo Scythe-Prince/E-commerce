@@ -684,6 +684,24 @@ div#supermarket .cat-list {
     padding: 5px;
   }
 }
+.menu-icons-container {
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu-icons-container .menu-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menu-icons-container .menu-card-img img {
+  max-width: 100%;
+}
+.menu-icons-container .menu-card-footer h4 {
+  font-weight: bold;
+}
 * {
   box-sizing: border-box;
   margin: 0px;
