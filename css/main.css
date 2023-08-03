@@ -684,28 +684,49 @@ div#supermarket .cat-list {
     padding: 5px;
   }
 }
-.menu-icons-container {
-  overflow-x: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.ad-section-parent {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 10px;
+  padding: 20px;
+  background-color: #ececec;
 }
-.menu-icons-container .menu-card {
+.ad-section-parent .ad-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
+  background-color: white;
+  border-radius: 20px;
 }
-.menu-icons-container .menu-card-footer h4 {
-  font-size: 15px;
-  font-weight: bold;
-  text-align: center;
+.ad-section-parent .ad-section-card-header {
+  margin: 10px 0px;
+  padding: 10px 20px;
 }
-.menu-icons-container .menu-card-footer h4 span {
-  font-size: 20px !important;
-  font-family: "Kaushan Script", cursive;
-  color: #e91e63;
+.ad-section-parent .ad-section #ad-special {
+  flex-direction: column;
+}
+.ad-section-parent .ad-section-component {
+  display: flex;
+}
+.ad-section-parent .ad-section-card {
+  padding: 20px;
+}
+.ad-section-parent .ad-section-card-img {
+  margin: -3px 0px;
+}
+.ad-section-parent .ad-section-card-img img {
+  border-radius: 6px;
+  max-width: 100%;
+}
+.ad-section-parent .ad-section-footer {
+  border-radius: 6px;
+  padding: 10px 15px;
+  background-color: #e7e7e7;
+}
+.ad-section-parent .ad-section-footer h4 {
+  font-size: 17px;
+}
+.ad-section-parent .ad-section-footer p {
+  font-size: 13px;
 }
 
 * {

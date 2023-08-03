@@ -203,14 +203,14 @@ for (var i = 0; i < slider_bullets.length; i++) {
 checker();
 function next_slide() {
     current_slide++;
-    if (current_slide == 6) {
+    if (current_slide == 8) {
         current_slide = 1;
     }
     checker();
 }
 setInterval(function next_slide() {
     current_slide++;
-    if (current_slide == 6) {
+    if (current_slide == 8) {
         current_slide = 1;
     }
     checker();
@@ -218,7 +218,7 @@ setInterval(function next_slide() {
 function prev_slide() {
     current_slide--;
     if (current_slide == 0) {
-        current_slide = 5;
+        current_slide = 7;
     }
     checker();
 }
@@ -240,3 +240,8 @@ function active_removal() {
     });
 }
 // end image-slider
+
+
+// start product scroller
+
+// end product scroller
