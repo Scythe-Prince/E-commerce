@@ -729,6 +729,140 @@ div#supermarket .cat-list {
   font-size: 13px;
 }
 
+.slider {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  margin: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background-color: #ececec;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-card {
+  padding: 10px 20px;
+  border-radius: 12px;
+  background-color: white;
+  margin: 0px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.slider-card-img {
+  width: 250px;
+}
+.slider-card-img img {
+  max-width: 100%;
+}
+.slider-card-info h3 {
+  margin: 5px 0px;
+  font-size: 15px;
+}
+.slider-card-info #sale-num {
+  text-decoration: line-through;
+  display: inline-block;
+}
+.slider-card-info span {
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(31, 194, 31);
+  font-size: 13px;
+}
+.slider-card-info p {
+  color: #777;
+  font-size: 11px;
+}
+.slider-card-info p span {
+  font-weight: bold;
+  font-size: 15px;
+  color: black !important;
+}
+.slider-card .product-slider-rating i {
+  color: #feee00;
+  font-size: 15px;
+}
+.slider-card .slider-badge-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+}
+.slider-card .slider-badge-info .slider-badge {
+  background-color: #feee00;
+  border-radius: 50px;
+  color: black;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 13px;
+}
+.slider-card .slider-badge-info .slider-badge i {
+  color: black;
+  font-size: 13px;
+}
+.slider-card .slider-badge-info .slider-badge-rating {
+  background-color: rgb(31, 194, 31);
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.slider-card .slider-badge-info .slider-badge-rating i {
+  color: white;
+  font-size: 10px;
+}
+.slider-card .slider-badge-info .slider-badge-counter {
+  color: #666;
+  font-weight: 300;
+}
+
+.slider .slide {
+  display: flex;
+  position: absolute;
+  left: 0;
+  transition: 0.3s left ease-in-out;
+  background-color: #ececec;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.slider .item:last-child {
+  margin-right: 0;
+}
+
+.ctrl {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.ctrl-btn {
+  padding: 10px 14px;
+  font-size: 15px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 3px -1px;
+  position: absolute;
+  top: 50%;
+  margin-top: -27.5px;
+}
+
+.ctrl-btn.pro-prev {
+  left: 0;
+}
+
+.ctrl-btn.pro-next {
+  right: 0;
+}
+
 * {
   box-sizing: border-box;
   margin: 0px;
