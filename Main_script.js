@@ -243,7 +243,6 @@ function active_removal() {
 
 
 // start product scroller
-"use strict";
 
 productScroll();
 
@@ -304,3 +303,64 @@ function getCount(parent, getChildrensChildren) {
     return relevantChildren;
 }
 // end product scroller
+// start product scroller 2
+productScroll2();
+
+function productScroll2() {
+    let slider2 = document.getElementById("slider2");
+    let next2 = document.getElementsByClassName("pro-next2");
+    let prev2 = document.getElementsByClassName("pro-prev2");
+    let slide2 = document.getElementById("slide2");
+    let item2 = document.getElementById("slide2");
+
+    for (let i = 0; i < next2.length; i++) {
+        //refer elements by class name
+
+        let position2 = 0; //slider postion
+
+        prev2[i].addEventListener("click", function () {
+            //click previos button
+            if (position2 > 0) {
+                //avoid slide left beyond the first item
+                position2 -= 1;
+                translateX2(position2); //translate items
+            }
+        });
+
+        next2[i].addEventListener("click", function () {
+            if (position2 >= 0 && position2 < hiddenItems2()) {
+                //avoid slide right beyond the last item
+                position2 += 1;
+                translateX2(position2); //translate items
+            }
+        });
+    }
+
+    function hiddenItems2() {
+        //get hidden items
+        let items = getCount2(item2, false);
+        let visibleItems = slider2.offsetWidth / 210;
+        return items - Math.ceil(visibleItems);
+    }
+}
+
+function translateX2(position2) {
+    //translate items
+    slide2.style.left = position2 * -300 + "px";
+}
+
+function getCount2(parent, getChildrensChildren) {
+    //count no of items
+    let relevantChildren = 0;
+    let children = parent.childNodes.length;
+    for (let i = 0; i < children; i++) {
+        if (parent.childNodes[i].nodeType != 3) {
+            if (getChildrensChildren)
+                relevantChildren += getCount2(parent.childNodes[i], true);
+            relevantChildren++;
+        }
+    }
+    return relevantChildren;
+}
+
+// end product scroller 2

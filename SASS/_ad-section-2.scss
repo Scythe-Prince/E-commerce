@@ -1,0 +1,69 @@
+@use "./color_ref" as *;
+.ad-sec-2 {
+  padding: 20px;
+  margin: 20px 0px;
+  .ad-sec-header-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .text-header {
+      h3 {
+        font-size: 25px;
+      }
+    }
+    .header-button {
+      button {
+        margin: 0px;
+        border: none;
+        background-color: black;
+        padding: 13px 20px;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+        letter-spacing: 2.2px;
+        cursor: pointer;
+        transition: 0.3s;
+        border: 1px solid black;
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+  }
+  .sec-cards {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .sec-ad-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .sec-ad-img {
+        img {
+          // max-width: 100%;
+        }
+      }
+      .sec-ad-footer {
+        margin-top: -5px;
+        width: 100%;
+        padding: 10px 8px;
+        background-color: $section_background;
+        h3 {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+@media (min-width:360px)and (max-width:850px){
+      .sec-cards{
+        flex-direction: column;
+      }
+      .sec-ad-card{
+        margin: 15px 0px;
+      }
+    }
