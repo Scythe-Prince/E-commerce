@@ -303,6 +303,7 @@ function getCount(parent, getChildrensChildren) {
     return relevantChildren;
 }
 // end product scroller
+
 // start product scroller 2
 productScroll2();
 
@@ -364,3 +365,66 @@ function getCount2(parent, getChildrensChildren) {
 }
 
 // end product scroller 2
+
+
+// start product scroller 3
+productScroll3();
+
+function productScroll3() {
+    let slider3 = document.getElementById("slider3");
+    let next3 = document.getElementsByClassName("pro-next3");
+    let prev3 = document.getElementsByClassName("pro-prev3");
+    let slide3 = document.getElementById("slide3");
+    let item3 = document.getElementById("slide3");
+
+    for (let i = 0; i < next3.length; i++) {
+        //refer elements by class name
+
+        let position3 = 0; //slider postion
+
+        prev3[i].addEventListener("click", function () {
+            //click previos button
+            if (position3 > 0) {
+                //avoid slide left beyond the first item
+                position3 -= 1;
+                translateX3(position3); //translate items
+            }
+        });
+
+        next3[i].addEventListener("click", function () {
+            if (position3 >= 0 && position3 < hiddenItems3()) {
+                //avoid slide right beyond the last item
+                position3 += 1;
+                translateX3(position3); //translate items
+            }
+        });
+    }
+
+    function hiddenItems3() {
+        //get hidden items
+        let items = getCount3(item3, false);
+        let visibleItems = slider3.offsetWidth / 210;
+        return items - Math.ceil(visibleItems);
+    }
+}
+
+function translateX3(position3) {
+    //translate items
+    slide3.style.left = position3 * -300 + "px";
+}
+
+function getCount3(parent, getChildrensChildren) {
+    //count no of items
+    let relevantChildren = 0;
+    let children = parent.childNodes.length;
+    for (let i = 0; i < children; i++) {
+        if (parent.childNodes[i].nodeType != 3) {
+            if (getChildrensChildren)
+                relevantChildren += getCount3(parent.childNodes[i], true);
+            relevantChildren++;
+        }
+    }
+    return relevantChildren;
+}
+
+// end product scroller 3
