@@ -750,6 +750,7 @@ div#supermarket .cat-list {
 }
 
 .slider-card {
+  transition: 0.3s;
   padding: 10px 20px;
   border-radius: 12px;
   background-color: white;
@@ -758,6 +759,9 @@ div#supermarket .cat-list {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.slider-card:hover {
+  transform: scale(1.025);
 }
 .slider-card-img {
   width: 250px;
