@@ -39,6 +39,10 @@
     align-items: center;
     
     .sec-ad-card {
+      &:hover {
+        transform: scale(1.025);
+      }
+      transition: 0.3s;
       display: flex;
       flex-direction: column;
       align-items: center;
