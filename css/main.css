@@ -937,6 +937,204 @@ div#supermarket .cat-list {
     font-size: 13px;
   }
 }
+.read-more-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+  gap: 1rem;
+  padding: 20px 0px;
+}
+
+.container {
+  padding: 2rem;
+  line-height: 1.4rem;
+}
+.container .highlight {
+  color: #0984e3;
+  text-decoration: underline;
+}
+.container h3 {
+  margin: 10px 0px;
+  color: #404553;
+}
+.container p {
+  font-size: 13px;
+  color: rgb(126, 133, 155);
+}
+.container span:not(.read-more-btn, .highlight) {
+  color: rgb(126, 133, 155);
+}
+
+.read-more-btn {
+  color: #0984e3;
+  cursor: pointer;
+}
+
+.read-more-text {
+  display: none;
+}
+
+.read-more-text--show {
+  display: inline;
+}
+
+@media (min-width: 367px) and (max-width: 900px) {
+  .container h3 {
+    font: 13px;
+  }
+  .container p {
+    font-size: 10px;
+  }
+  .container .read-more-btn {
+    font-size: 11px;
+  }
+}
+.footer {
+  border-top: 1px solid #b9b9b9;
+  background-color: #ececec;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-left h3 {
+  text-wrap: nowrap;
+  color: #404553;
+}
+.footer-left p {
+  color: #777;
+  font-size: 14px;
+}
+.footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-right .footer-i {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.footer-right .footer-i:hover {
+  opacity: 0.6;
+}
+.footer-right .footer-i i {
+  font-size: 13px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px 6px;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+.footer-right .footer-i-info .footer-info-header {
+  font-weight: 400;
+  font-size: 13px;
+  color: #666;
+}
+.footer-right .footer-i-info .footer-info-header2 {
+  font-weight: 500;
+  font-size: 15px;
+  color: #404553;
+}
+
+@media (min-width: 367px) and (max-width: 900px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .footer-left {
+    margin: 10px 0px;
+  }
+  .footer-left h3 {
+    text-align: center;
+    font-size: 13px;
+  }
+  .footer-left p {
+    font-size: 10px;
+  }
+  .footer-right .footer-i-info .footer-info-header {
+    font-size: 10px;
+  }
+  .footer-right .footer-i-info .footer-info-header2 {
+    font-size: 12px;
+  }
+}
+.footer-2 {
+  height: 70vh;
+  margin: 20px 0px;
+}
+.footer-2 .footer-lists-container {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+.footer-2 .footer-lists-container .footer-list-element {
+  padding: 10px 20px;
+}
+.footer-2 .footer-lists-container .footer-list-element h3 {
+  font-size: 15px;
+  font-weight: 500;
+}
+.footer-2 .footer-lists-container .footer-list-element ul {
+  padding: 0;
+  line-height: 2.2;
+}
+.footer-2 .footer-lists-container .footer-list-element ul li {
+  color: #777;
+  font-size: 13px;
+  cursor: pointer;
+}
+.footer-2 .footer-lists-container .footer-list-element ul li:hover {
+  color: #2196f3;
+}
+.footer-2 .footer-connect {
+  position: relative;
+}
+.footer-2 .footer-connect .footer-holder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.footer-2 .footer-connect h3 {
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+}
+.footer-2 .footer-connect .contact {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
+}
+.footer-2 .footer-connect .contact i {
+  background-color: #feee00;
+  color: #404553;
+  padding: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 25px;
+  margin: 0px 5px;
+  transition: 0.5s;
+}
+.footer-2 .footer-connect .contact i:hover {
+  background-color: #404553;
+  color: #feee00;
+}
+
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -957,29 +1155,4 @@ div#supermarket .cat-list {
 a {
   text-decoration: none;
   color: black;
-}
-
-/* mediaquery */
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-/* Medium */
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-/* Large */
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-.container {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
 }/*# sourceMappingURL=main.css.map */

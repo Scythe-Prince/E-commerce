@@ -1,0 +1,56 @@
+@use "./color_ref" as *;
+.read-more-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+  gap: 1rem;
+  padding: 20px 0px;
+}
+
+.container {
+  .highlight {
+    color: #0984e3;
+    text-decoration: underline;
+  }
+  padding: 2rem;
+  line-height: 1.4rem;
+  h3 {
+    margin: 10px 0px;
+    color: $sup_text3;
+  }
+  p {
+    font-size: 13px;
+    color: rgb(126, 133, 155);
+  }
+  span:not(.read-more-btn, .highlight) {
+    color: rgb(126, 133, 155);
+  }
+}
+
+.read-more-btn {
+  color: #0984e3;
+  cursor: pointer;
+}
+
+.read-more-text {
+  display: none;
+}
+
+.read-more-text--show {
+  display: inline;
+}
+@media (min-width: 367px) and (max-width: 900px) {
+  .container {
+    h3 {
+    font: 13px;
+  }
+  p {
+    font-size: 10px;
+
+  }
+  .read-more-btn{
+    font-size: 11px;
+  }
+  
+  }
+}
