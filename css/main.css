@@ -869,6 +869,11 @@ div#supermarket .cat-list {
   right: 0;
 }
 
+@media (min-width: 360px) and (max-width: 900px) {
+  .ctrl-btn {
+    display: none;
+  }
+}
 .ad-sec-2 {
   padding: 20px;
   margin: 20px 0px;
@@ -1135,6 +1140,14 @@ div#supermarket .cat-list {
   color: #feee00;
 }
 
+@media (min-width: 360px) and (max-width: 900px) {
+  .footer-2 {
+    height: 275vh;
+  }
+  .footer-2 .footer-lists-container {
+    flex-direction: column;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0px;

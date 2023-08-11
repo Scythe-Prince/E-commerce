@@ -144,3 +144,9 @@
 .ctrl-btn.pro-next {
   right: 0;
 }
+
+@media (min-width: 360px) and (max-width: 900px){
+.ctrl-btn{
+  display: none;
+}
+}

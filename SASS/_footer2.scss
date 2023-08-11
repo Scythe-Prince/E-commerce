@@ -65,3 +65,11 @@
     }
   }
 }
+@media (min-width: 360px) and (max-width: 900px){
+    .footer-2{
+      height: 275vh;
+    }
+  .footer-2 .footer-lists-container {
+    flex-direction: column;
+  }
+}
